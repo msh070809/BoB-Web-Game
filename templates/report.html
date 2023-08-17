@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% block content %}
+<div class="jumbotron">
+  <h1>Thank you for signing up {{userid}}!</h1>
+    {% if report  %}
+        <h2>환영합니다 {{userid}}! </h2>
+    {% else %}
+        <h2>아이쿠! 사용자 PW에 문제가 있어보여요.</h2>
+        <ul>  
+            {% if not lower %}
+                <li>소문자가 포함되지 않았어요.</li>
+            {% endif %}
+            
+            {% if not upper %}
+                <li>대문자가 포함되지 않았어요.</li>
+            {% endif %}
+        
+            {% if not num_end %}
+                <li>숫자가 포함되지 않았어요.</li>  
+            {% endif %}          
+        </ul>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

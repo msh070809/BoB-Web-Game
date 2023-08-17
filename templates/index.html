@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <title>BoB Web Game</title>
-    </head>
-    <body>
-        <h1>Hello world</h1>
-        <h2>Hi</h2>
-        <button><a href="/1">Go to 1</a></button>
-    </body>
-</html>
+{% extends "base.html"%}
+{% block content %}
+
+<div class="jumbotron">
+<h2>Puppy World에 오신걸 환영합니다!</h2>
+<p>사용자 ID를 확인하는 페이지입니다. 다음 조건을 유의하여 ID를 입력해주세요.</p>
+<ul>
+    <li>최소한 하나의 대문자 포함한다.</li>
+
+    <li>최소한 하나의 소문자를 포함한다.</li>
+
+    <li>마지막은 숫자로 끝나야 한다.</li>
+</ul>
+
+<form action="{{url_for('report')}}">
+<label for="first">User ID : </label>
+<input type="text" name="userid">
+<input class="btn_primary" type="submit" value="Submit Form">
+</form>
+</div>
+
+{% endblock %}
